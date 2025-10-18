@@ -5,8 +5,8 @@ def create_connection():
     try:
         connection = mysql.connector.connect(
             host='localhost',
-            user='root',          # ✅ change this if needed
-            password='',           # ✅ empty if using XAMPP default
+            user='root',         
+            password='',            
             database='employee_db'
         )
         if connection.is_connected():

@@ -19,7 +19,7 @@ def create_table():
     connection.commit()
     cursor.close()
     connection.close()
-    print("✅ Table created!")
+    print("Table created!")
 
 def add_employee(name, salary, department, join_date):
     connection = create_connection()
@@ -30,7 +30,7 @@ def add_employee(name, salary, department, join_date):
     sql = "INSERT INTO employees (name, salary, department, join_date) VALUES (%s, %s, %s, %s)"
     cursor.execute(sql, (name, salary, department, join_date))
     connection.commit()
-    print(f"✅ Added {name} with ID {cursor.lastrowid}")
+    print(f"Added {name} with ID {cursor.lastrowid}")
     cursor.close()
     connection.close()
 
@@ -55,7 +55,7 @@ def update_salary(employee_id, new_salary):
     cursor = connection.cursor()
     cursor.execute("UPDATE employees SET salary = %s WHERE id = %s", (new_salary, employee_id))
     connection.commit()
-    print(f"✅ Salary updated for ID {employee_id}")
+    print(f"Salary updated for ID {employee_id}")
     cursor.close()
     connection.close()
 
@@ -67,6 +67,6 @@ def delete_employee(employee_id):
     cursor = connection.cursor()
     cursor.execute("DELETE FROM employees WHERE id = %s", (employee_id,))
     connection.commit()
-    print(f"🗑️ Employee ID {employee_id} deleted")
+    print(f"Employee ID {employee_id} deleted")
     cursor.close()
     connection.close()
